@@ -37,8 +37,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends liboss4-salsa-asound2 libnss3 libxcomposite1 libxdamage1 libxrandr2 libgbm1 libgtk-3-0
 
-      - name: Install playwright browsers
-        run: pnpm playwright install --with-deps chromium
+      - name: Install Playwright browsers dependencies
+        run: |
+          sudo apt-get install -y --no-install-recommends fonts-liberation libappindicator3-1 libatk-bridge2.0-0 libatspi2.0-0 libxkbcommon0 xdg-utils
+
+      - name: Install Playwright browsers
+        run: pnpm playwright install chromium
 
       - name: Run tests
         run: pnpm run ci
