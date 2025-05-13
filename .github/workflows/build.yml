@@ -6,7 +6,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,9 +15,6 @@ jobs:
           bundler-cache: true
       - uses: actions/setup-node@v4
       - uses: pnpm/action-setup@v3
-        with: { run_install: false }
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v3
         with:
           version: 8.15.4
           run_install: false
@@ -34,18 +31,8 @@ jobs:
             ${{ runner.os }}-pnpm-store-
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
-
       - name: Build site
         run: pnpm run build
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
