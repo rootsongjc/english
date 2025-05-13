@@ -1,7 +1,7 @@
 const isProd = Boolean(import.meta.env.PROD)
 
 export const site = {
-  url: 'https://jimmysong.io/english',
+  url: 'https://jimmysong.io/english/',
   title: 'English Cheatsheet：实用英语速查表'
 } as const
 
