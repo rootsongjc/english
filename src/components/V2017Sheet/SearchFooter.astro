@@ -1,5 +1,8 @@
 ---
 import SearchForm from './SearchForm.astro'
+
+const baseUrl = import.meta.env.BASE_URL || ''
+
 ---
 
 <footer class="search-footer" data-js-no-preview>
@@ -9,7 +12,7 @@ import SearchForm from './SearchForm.astro'
         <SearchForm class="-small" />
       </div>
       <div class="links">
-        <a class="home-button" href="/"><i></i></a>
+        <a class="home-button" href={baseUrl}><i></i></a>
       </div>
     </div>
   </div>
