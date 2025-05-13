@@ -35,7 +35,7 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libasound2 libnss3 libxcomposite1 libxdamage1 libxrandr2 libgbm1 libgtk-3-0
+          sudo apt-get install -y --no-install-recommends liboss4-salsa-asound2 libnss3 libxcomposite1 libxdamage1 libxrandr2 libgbm1 libgtk-3-0
 
       - name: Install playwright browsers
         run: pnpm playwright install --with-deps chromium
