@@ -89,9 +89,9 @@ const headingStyles = {
     <header class={headingStyles.root} role="banner">
       <h1 class={headingStyles.h1}>
         <span class={headingStyles.title}>{title}</span>
-        <span class={headingStyles.suffix}> Cheatsheet</span>
-        <a href={categoryUrl} class="category-link">{category}</a>
+        <!-- <span class={headingStyles.suffix}> Cheatsheet</span> -->
       </h1>
+      <span><a href={categoryUrl} class="category-link">{category}</a></span>
 
       {/* Publicite */}
       <div class={headingStyles.pubbox} data-js-no-preview><CarbonBox /></div>
@@ -161,29 +161,7 @@ const headingStyles = {
   @import '../sass/2017/components/main-heading';
   @import '../sass/2017/components/pre-footer';
 
-  .category-link {
-    display: inline-block;
-    padding: 2px 8px; /* Adjust padding to make it less intrusive */
-    border: 1px solid #6b7280; /* Gray border */
-    border-radius: 4px;
-    background-color: transparent;
-    font-weight: bold;
-    color: #6b7280; /* Gray text */
-    line-height: 1.5; /* Adjust line height for better spacing */
-    margin-top: 4px; /* Add spacing from the title */
-    margin-right: 8px; /* Add spacing from the title */
-    margin-left: 8px; /* Add spacing from the title */
-    font-size: 0.65em; /* Slightly smaller font size */
-    text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
-    vertical-align: baseline; /* Align with the text baseline */
-  }
 
-  .category-link:hover {
-    background-color: #6b7280; /* Gray background */
-    color: white; /* White text */
-    text-decoration: none;
-  }
 </style>
 
 <script>
