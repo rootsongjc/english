@@ -9,8 +9,9 @@ import tailwind from '@astrojs/tailwind'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://jimmysong.io/english/',
+  trailingSlash: 'never', // Ensure subpages do not have trailing slashes
   build: {
-    format: 'file' /* generate /my-post.html instead of /my-post/index.html */,
+    format: 'directory', // Generate /my-post/index.html for better compatibility
     inlineStylesheets: 'always'
   },
   prefetch: {
