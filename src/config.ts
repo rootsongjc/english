@@ -16,7 +16,7 @@ export const disqus = {
 
 export const googleAnalytics = {
   enabled: isProd,
-  measurementId: 'G-N7TC6B227L'
+  measurementId: 'UA-93485976-1'
 } as const
 
 export const github = {
