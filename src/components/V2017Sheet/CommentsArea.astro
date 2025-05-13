@@ -1,0 +1,28 @@
+---
+import { site } from '../../config'
+
+const t = {
+  suffix: 'for this cheatsheet.',
+  link: 'Write yours!'
+}
+
+export type Props = {
+  identifier: string
+}
+
+const props = Astro.props as Props
+const url = `${site.url}/${props.identifier}`
+const { identifier } = props
+---
+<style lang="scss" is:global>
+  @import '../../sass/2017/utils';
+  @import '../../sass/2017/components/comments-area';
+  @import '../../sass/2017/components/comments-details';
+  @import '../../sass/2017/components/comments-section';
+</style>
+
+<script>
+  // import { setupDisqus } from '~/scripts/v2017/behaviors_2/disqus'
+
+  // setupDisqus()
+</script>

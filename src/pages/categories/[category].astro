@@ -1,0 +1,26 @@
+---
+import { getPagesByCategory, standardizeCategoryName } from '../../config';
+
+const { category } = Astro.params;
+const standardizedCategory = standardizeCategoryName(category);
+const pages = getPagesByCategory(standardizedCategory);
+---
+
+<html>
+  <head>
+    <title>{standardizedCategory.replace(/-/g, ' ')}</title>
+  </head>
+  <body>
+    <h1>{standardizedCategory.replace(/-/g, ' ')}</h1>
+    <ul>
+      {pages.map((page) => (
+        <li><a href={page.url}>{page.title}</a></li>
+      ))}
+    </ul>
+    <form action="/search" method="get">
+      <input type="hidden" name="category" value={standardizedCategory} />
+      <input type="text" name="q" placeholder={`Search within ${standardizedCategory.replace(/-/g, ' ')}`} />
+      <button type="submit">Search</button>
+    </form>
+  </body>
+</html>
