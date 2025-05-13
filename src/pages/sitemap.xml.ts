@@ -11,7 +11,7 @@ export async function GET() {
   const visiblePages = Object.values(await getPages()).filter(isListed)
 
   for (const page of visiblePages) {
-    const url = `${site.url}/${page.slug}`
+    const url = `${site.url}${page.slug}`
     lines.push(`<url><loc>${url}</loc></url>`)
   }
 

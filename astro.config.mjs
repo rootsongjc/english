@@ -8,7 +8,7 @@ import tailwind from '@astrojs/tailwind'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://jimmysong.io',
+  site: 'https://jimmysong.io/english/',
   base: '/english', // Base URL for the site
   output: 'static', // Static site generation
   trailingSlash: 'ignore', // Ignore trailing slashes for the root page
