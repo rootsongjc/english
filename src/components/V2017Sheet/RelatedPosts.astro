@@ -40,6 +40,8 @@ const categoryHeading = category
 const pages = await getPages()
 const relatedPages = getRelatedPages(pages, page, { maxCount: 6 })
 const topPages = getTopPages(pages, page, { maxCount: 6 })
+
+const baseUrl = import.meta.env.BASE_URL || ''
 ---
 
 <footer class="related-posts-area" id="related" data-js-no-preview>
@@ -47,7 +49,7 @@ const topPages = getTopPages(pages, page, { maxCount: 6 })
     <div class="related-posts-section">
       {/* Callout */}
       <div class="callout">
-        <a class="related-posts-callout" href="/">
+        <a class="related-posts-callout" href={baseUrl}>
           <div class="text">
             <i class="icon"></i>
             <span class="description">{calloutDescription}</span>

@@ -19,6 +19,7 @@ const t = {
 }
 
 const editLink = getEditLink(props.page)
+const baseUrl = import.meta.env.BASE_URL || ''
 ---
 
 <nav class="top-nav" data-js-no-preview role="navigation">
@@ -26,12 +27,12 @@ const editLink = getEditLink(props.page)
     {
       props.noBack !== true ? (
         <div class="left">
-          <a class="home back-button" href="/" aria-label={t.backToHome} />
+          <a class="home back-button" href={baseUrl} aria-label={t.backToHome} />
         </div>
       ) : null
     }
 
-    <a class="brand" href="/">
+    <a class="brand" href={baseUrl}>
       {t.title}
     </a>
 

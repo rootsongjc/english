@@ -16,6 +16,8 @@ export type Props = {
 
 const props = Astro.props as Props
 const analyticsEnabled = googleAnalytics.enabled
+const baseUrl = import.meta.env.BASE_URL || ''
+
 ---
 
 <html lang="en">
@@ -23,7 +25,7 @@ const analyticsEnabled = googleAnalytics.enabled
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="shortcut icon" type="image/png" href="/assets/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href={`${baseUrl}/assets/favicon.png`} />
     {/* Title */}
     {props.title ? <title>{props.title}</title> : null}
     {/* Google tag */}

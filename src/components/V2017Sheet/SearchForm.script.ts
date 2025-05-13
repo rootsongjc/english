@@ -1,6 +1,8 @@
 import autocomplete from 'autocompleter'
 import { fetchFuse, parseFuse } from '~/lib/fuseSearch/fuseSearch'
 
+const baseUrl = import.meta.env.BASE_URL || ''
+
 export async function setup(input: HTMLInputElement) {
   let fuse
 
@@ -19,7 +21,7 @@ export async function setup(input: HTMLInputElement) {
     onSelect: (item) => {
       // ^ { label, value }
       const slug = item.value
-      window.location.href = `/${slug}`
+      window.location.href = `${baseUrl}/${slug}`
     }
   })
 }

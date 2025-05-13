@@ -8,8 +8,15 @@ import tailwind from '@astrojs/tailwind'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://jimmysong.io/english/',
-  trailingSlash: 'never', // Ensure subpages do not have trailing slashes
+  site: 'https://jimmysong.io',
+  base: '/english', // Base URL for the site
+  output: 'static', // Static site generation
+  trailingSlash: 'ignore', // Ignore trailing slashes for the root page
+  compressHTML: true, // Compress HTML output
+  images: {
+    serviceWorker: true, // Enable service worker for images
+    lazyLoad: true // Lazy load images
+  },
   build: {
     format: 'directory', // Generate /my-post/index.html for better compatibility
     inlineStylesheets: 'always'
