@@ -14,6 +14,8 @@ export type Row = { title: string; slug: string }
 
 export type FuseIndex = Fuse.FuseIndex<Row>
 
+const baseUrl = import.meta.env.BASE_URL || ''
+
 /** A subset of `SheetPage` needed for search indexing */
 type PartialSheetPage = {
   slug: SheetPage['slug']
@@ -36,7 +38,7 @@ export function buildFuseIndex(pages: Record<string, PartialSheetPage>) {
 }
 
 export async function fetchFuse() {
-  const res = await fetch('/searchindex.json')
+  const res = await fetch(`${baseUrl}/searchindex.json`)
   if (res.status > 400) throw new Error('Failed to fetch searchindex.json')
   return res.json()
 }
