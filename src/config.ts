@@ -57,3 +57,7 @@ export const announcement = {
     `Follow [@jimmysongio](https://x.com/jimmysongio) on X/Twitter for daily "today I learned" snippets.`,
   ].join('\n')
 }
+
+export function standardizeCategoryName(name: string): string {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+}
