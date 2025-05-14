@@ -47,7 +47,8 @@ export const categories = [
   'Time & Number',
   'Technical',
   'Global English',
-  'Others'
+  'Others',
+  'Food & Drink',
 ] as const
 
 export const announcement = {
