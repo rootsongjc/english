@@ -2,7 +2,7 @@
 title: Travel Survival
 intro: Essential tips and phrases for travel survival.
 category: Travel & Survival
-tags: []
+tags: ["Featured"]
 updated: 2025-05-12
 ---
 
