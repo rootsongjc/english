@@ -77,6 +77,9 @@ dependencies:
   html-inline-external:
     specifier: ^1.0.10
     version: 1.0.10
+  modularscale-sass:
+    specifier: ^3.0.10
+    version: 3.0.10
   playwright:
     specifier: ^1.38.1
     version: 1.42.1
@@ -5180,6 +5183,10 @@ packages:
       pathe: 1.1.2
       pkg-types: 1.0.3
       ufo: 1.4.0
+    dev: false
+
+  /modularscale-sass@3.0.10:
+    resolution: {integrity: sha512-ppbMfcXC+ESpqk1s8BfqsuY85DTAJdoPLxrYFohAUjg3r9eh2CBm2Wn7+JAh26DbRpAHynRt3a8ma2FOfk7JGA==}
     dev: false
 
   /mrm-core@6.1.7:
